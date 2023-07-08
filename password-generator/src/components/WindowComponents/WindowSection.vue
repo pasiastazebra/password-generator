@@ -1,7 +1,7 @@
 <template>
     <div class="section">
-        <p class="section-text">text placeholder</p>
-        <input type="text" class="section-input" value="input placeholder">
+        <p class="section-text">{{ text }}</p>
+        <input type="text" class="section-input" :value="inputPlaceholder">
     </div>
 </template>
   
@@ -9,6 +9,8 @@
   export default {
     name: 'WindowSection',
     props: {
+        text: String,
+        inputPlaceholder: String
     }
   }
   </script>
