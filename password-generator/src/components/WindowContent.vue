@@ -30,11 +30,11 @@ export default {
   data() {
     return {
       items: [
-        { id: 1, text: 'Length', inputPlaceholder: 'Length' },
-        { id: 2, text: 'Ammount of numbers', inputPlaceholder: 'Ammount of numbers' },
-        { id: 3, text: 'Ammount of special characters', inputPlaceholder: 'Ammount of special characters' },
-        { id: 4, text: 'Required phrase', inputPlaceholder: 'Required phrase' },
-        { id: 5, text: 'Generate', inputPlaceholder: 'Output' }
+        { id: 1, text: 'Length', inputPlaceholder: 'Length', value: '' },
+        { id: 2, text: 'Ammount of numbers', inputPlaceholder: 'Ammount of numbers', value: '' },
+        { id: 3, text: 'Ammount of special characters', inputPlaceholder: 'Ammount of special characters', value: '' },
+        { id: 4, text: 'Required phrase', inputPlaceholder: 'Required phrase', value: '' },
+        { id: 5, text: 'Generate', inputPlaceholder: 'Output', value: '' }
       ]
     };
   },
