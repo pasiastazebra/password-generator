@@ -1,7 +1,9 @@
 <template>
     <div class="section">
         <p class="section-text">{{ text }}</p>
-        <input type="text" class="section-input" :value="inputPlaceholder">
+        <input type="text" class="section-input" v-model="value" :placeholder="inputPlaceholder">
+        <br />
+        You typed: <b>{{ value }}</b>
     </div>
 </template>
   
@@ -11,7 +13,12 @@
     props: {
         text: String,
         inputPlaceholder: String
-    }
+    },
+    data() {
+    return {
+      value: '',
+    };
+  }
   }
   </script>
   
