@@ -1,7 +1,7 @@
 <template>
     <div class="section">
         <p class="section-text">{{ text }}</p>
-        <input type="text" class="section-input" v-model="value" :placeholder="inputPlaceholder">
+        <input type="text" class="section-input" :value="value" :placeholder="inputPlaceholder" @input="$emit('input', $event.target.value)">
         <br />
         You typed: <b>{{ value }}</b>
     </div>
@@ -12,12 +12,13 @@
     name: 'WindowSection',
     props: {
         text: String,
-        inputPlaceholder: String
+        inputPlaceholder: String,
+        value: String
     },
-    data() {
-    return {
-      value: '',
-    };
+  methods: {
+   updateValue() {
+     this.$emit('input', this.value);
+   }
   }
   }
   </script>

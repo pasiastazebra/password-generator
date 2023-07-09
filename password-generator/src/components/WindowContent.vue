@@ -13,7 +13,7 @@
         :text="item.text"
         :inputPlaceholder="item.inputPlaceholder"
         :value="item.value"
-        @mouseover="showAlert"
+        @mouseover="showAlert(item.id)"
       />
     </div>
   </div>
@@ -39,9 +39,9 @@ export default {
     };
   },
   methods: {
-    showAlert() {
-      const length = this.items.find(item => item.id === 1).value;
-      alert(`${length}`);
+    showAlert(itemId) {
+      const item = this.items.find(item => item.id === itemId);
+      alert(item.value);
     }
   }
 };
