@@ -37,7 +37,11 @@ const specChar = [['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'],
                   ['[', ']', '{', '}', '?', '<', '>', ',', '.', '+'], 
                   ['-', '=', '/', '|', '\\', '_', "'", '`', '"', '~']];
 
-//generating logic gonna be here
+//function for randomizing 
+
+const randomArray = () => {
+  return [Math.floor(Math.random() * 3), Math.floor(Math.random() * 9)];
+}
 
 export default {
   name: 'WindowContent',
