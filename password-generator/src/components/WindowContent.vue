@@ -43,6 +43,8 @@ const randomArray = () => {
   return [Math.floor(Math.random() * 3), Math.floor(Math.random() * 9)];
 }
 
+console.log (randomArray());
+
 export default {
   name: 'WindowContent',
 
