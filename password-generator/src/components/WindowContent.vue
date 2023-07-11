@@ -4,10 +4,12 @@
     <div class="window-section">
       <h2 class="window-section-title">Length</h2>
       <input type="number" class="window-section-input" placeholder="Length" v-model="length">
+      <p> {{ length }} </p>
     </div>
     <div class="window-section">
       <h2 class="window-section-title">Ammount of numbers</h2>
       <input type="number" class="window-section-input" placeholder="Ammount of numbers" v-model="amountOfNumbers">
+      <p> {{ amountOfNumbers }} </p>
     </div>
     <div class="window-section">
       <h2 class="window-section-title">Ammount of special characters</h2>
@@ -25,23 +27,30 @@
 </template>
 
 <script>
+//2D arrays for generating the password
 
-/*
+const letters = [['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'],
+                 ['K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T'], 
+                 ['U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D']];
 
-Need to prepare algorithm for random 2D array picking.
+const specChar = [['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'], 
+                  ['[', ']', '{', '}', '?', '<', '>', ',', '.', '+'], 
+                  ['-', '=', '/', '|', '\\', '_', "'", '`', '"', '~']];
 
-*/
+//generating logic gonna be here
 
 export default {
   name: 'WindowContent',
 
   data() {
     return {
+      
       length: '',
       amountOfNumbers: '',
       amountOfSpecChar: '',
       phrase: '',
-      result: 'test'
+      result: 'test',
+
     };
   }
 };
