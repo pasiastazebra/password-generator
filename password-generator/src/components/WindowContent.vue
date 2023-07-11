@@ -4,32 +4,33 @@
     <div class="window-section">
       <h2 class="window-section-title">Length</h2>
       <input type="number" class="window-section-input" placeholder="Length" v-model="length">
-      <p> {{ length }} </p>
     </div>
     <div class="window-section">
       <h2 class="window-section-title">Ammount of numbers</h2>
       <input type="number" class="window-section-input" placeholder="Ammount of numbers" v-model="amountOfNumbers">
-      <p> {{ amountOfNumbers }} </p>
     </div>
     <div class="window-section">
       <h2 class="window-section-title">Ammount of special characters</h2>
       <input type="number" class="window-section-input" placeholder="Ammount of special characters" v-model="amountOfSpecChar">
-      <p> {{ amountOfSpecChar }} </p>
     </div>
     <div class="window-section">
       <h2 class="window-section-title">Required phrase</h2>
       <input type="text" class="window-section-input" placeholder="Requeired phrase" v-model="phrase">
-      <p> {{ phrase }} </p>
     </div>
     <div class="window-section">
       <h2 class="window-section-title">Result</h2>
       <input type="text" class="window-section-input" placeholder="Result" :value="result" readonly>
-      <p> {{ result }} </p>
     </div>
   </div>
 </template>
 
 <script>
+
+/*
+
+Need to prepare algorithm for random 2D array picking.
+
+*/
 
 export default {
   name: 'WindowContent',
