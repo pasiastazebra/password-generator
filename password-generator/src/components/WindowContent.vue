@@ -1,49 +1,33 @@
 <template>
   <div class="window">
     <h1 class="window-title">title placeholder</h1>
-    <div v-for="item in items" :key="item.id">
-      <WindowSection
-        :text="item.text"
-        :inputPlaceholder="item.inputPlaceholder"
-        :value="item.value"
-        v-if="item.id !== 5"
-      />
-      <WindowSection
-        v-else
-        :text="item.text"
-        :inputPlaceholder="item.inputPlaceholder"
-        :value="item.value"
-        @mouseover="showAlert(item.id)"
-      />
+    <div class="window-section">
+      <h2 class="window-section-title">Length</h2>
+      <input type="number" class="window-section-input" placeholder="Length" :value="length">
+    </div>
+    <div class="window-section">
+      <h2 class="window-section-title">Ammount of numbers</h2>
+      <input type="number" class="window-section-input" placeholder="Ammount of numbers" :value="ammountOfNumbers">
+    </div>
+    <div class="window-section">
+      <h2 class="window-section-title">Ammount of special characters</h2>
+      <input type="number" class="window-section-input" placeholder="Ammount of special characters" :value="ammountOfSpecChar">
+    </div>
+    <div class="window-section">
+      <h2 class="window-section-title">Required phrase</h2>
+      <input type="text" class="window-section-input" placeholder="Requeired phrase" :value="phrase">
+    </div>
+    <div class="window-section">
+      <h2 class="window-section-title">Result</h2>
+      <input type="number" class="window-section-input" placeholder="Result" :value="result">
     </div>
   </div>
 </template>
 
 <script>
-import WindowSection from './WindowComponents/WindowSection.vue';
 
 export default {
   name: 'WindowContent',
-  components: {
-    WindowSection,
-  },
-  data() {
-    return {
-      items: [
-        { id: 1, text: 'Length', inputPlaceholder: 'Length', value: '' },
-        { id: 2, text: 'Ammount of numbers', inputPlaceholder: 'Ammount of numbers', value: '' },
-        { id: 3, text: 'Ammount of special characters', inputPlaceholder: 'Ammount of special characters', value: '' },
-        { id: 4, text: 'Required phrase', inputPlaceholder: 'Required phrase', value: '' },
-        { id: 5, text: 'Generate', inputPlaceholder: 'Output', value: '' }
-      ]
-    };
-  },
-  methods: {
-    showAlert(itemId) {
-      const item = this.items.find(item => item.id === itemId);
-      alert(item.value);
-    }
-  }
 };
 </script>
 
