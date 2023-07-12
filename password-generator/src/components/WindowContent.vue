@@ -16,7 +16,7 @@
       <input type="number" class="window-section-input" placeholder="Ammount of special characters" v-model="amountOfSpecChar">
     </div>
     <div class="window-section">
-      <h2 class="window-section-title">Result</h2>
+      <h2 class="window-section-title" @mouseover="passwordGenerator">Result</h2>
       <input type="text" class="window-section-input" placeholder="Result" :value="result" readonly>
     </div>
   </div>
@@ -33,38 +33,53 @@ const specChar = [['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'],
                   ['[', ']', '{', '}', '?', '<', '>', ',', '.', '+'], 
                   ['-', '=', '/', '|', '\\', '_', "'", '`', '"', '~']];
 
+let limitOfNumbers = 0;
+let limitOfCharacters = 0;
+
 //function for randomizing 
 
 const randomArray = () => {
   return [Math.floor(Math.random() * 3), Math.floor(Math.random() * 9)];
 }
 
+//final password generating function have to be there
+const passwordGenerator = () => {
+  //limiters
+  let limitOfNumbers = parseInt(this.amountOfNumbers);
+  let limitOfCharacters = parseInt(this.amountOfSpecChar);
+  const allSymbols = parseInt(this.length);
+
+  if (allSymbols != limitOfCharacters + limitOfNumbers) {
+    this.result = 'too much symbols' ;
+  } else {
+      for (let i = 0; i <= allSymbols; i++) {
+        this.result[i] = this.charPicker();
+      }
+  }
+  console.log(this.result);
+}
+
 //it would be nice to separate it into more function for code clarity
-const charPicker = (numberCount, charactersCount) => {
+const charPicker = () => {
   let [rowIndex, columnIndex] = randomArray();
-  if (numberCount === 0) {
-    if (charactersCount === 0){
+  if (limitOfNumbers === 0) {
+    if (limitOfCharacters === 0){
       return letters[rowIndex][columnIndex];
       //random to uper or lower case - to do - it can be separated function
     }else {
+      limitOfCharacters--;
       return specChar[rowIndex][columnIndex];
-      // -1 to char limiter
     }
   }
-  else if (charactersCount === 0){
+  else if (limitOfCharacters === 0){
+    limitOfNumbers--;
     return Math.floor(Math.random() * 9);
-    // -1 to number limiter
   }else{
     return letters[rowIndex][columnIndex];
     //random to uper or lower case - to do - it can be separated function
   }
 }
 
-//final password generating function have to be there
-
-const passwordGenerator = () => {
-  
-}
 
 console.log(charPicker(1, 0));
 console.log(charPicker(1, 1));
@@ -83,6 +98,11 @@ export default {
       result: 'test',
 
     };
+  },
+  methods: {
+    charPicker,
+    passwordGenerator,
+    randomArray,
   }
 };
 </script>
