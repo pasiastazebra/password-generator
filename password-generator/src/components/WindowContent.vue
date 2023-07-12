@@ -43,7 +43,29 @@ const randomArray = () => {
   return [Math.floor(Math.random() * 3), Math.floor(Math.random() * 9)];
 }
 
-console.log (randomArray());
+//it would be nice to separate it into more function for code clarity
+const charPicker = (numberCount, charactersCount) => {
+  let [rowIndex, columnIndex] = randomArray();
+  if (numberCount === 0) {
+    if (charactersCount === 0){
+      return letters[rowIndex][columnIndex];
+    }else {
+      return specChar[rowIndex][columnIndex];
+    }
+  }
+  else if (charactersCount === 0){
+    return Math.floor(Math.random() * 9);
+  }else{
+    return letters[rowIndex][columnIndex];
+  }
+}
+
+//final password generating function have to be there
+
+console.log(charPicker(1, 0));
+console.log(charPicker(1, 1));
+console.log(charPicker(0, 0));
+console.log(charPicker(0, 1));
 
 export default {
   name: 'WindowContent',
