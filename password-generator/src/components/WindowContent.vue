@@ -49,18 +49,26 @@ const charPicker = (numberCount, charactersCount) => {
   if (numberCount === 0) {
     if (charactersCount === 0){
       return letters[rowIndex][columnIndex];
+      //random to uper or lower case - to do - it can be separated function
     }else {
       return specChar[rowIndex][columnIndex];
+      // -1 to char limiter
     }
   }
   else if (charactersCount === 0){
     return Math.floor(Math.random() * 9);
+    // -1 to number limiter
   }else{
     return letters[rowIndex][columnIndex];
+    //random to uper or lower case - to do - it can be separated function
   }
 }
 
 //final password generating function have to be there
+
+const passwordGenerator = () => {
+  
+}
 
 console.log(charPicker(1, 0));
 console.log(charPicker(1, 1));
