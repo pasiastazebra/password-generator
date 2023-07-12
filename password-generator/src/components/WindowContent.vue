@@ -16,10 +16,6 @@
       <input type="number" class="window-section-input" placeholder="Ammount of special characters" v-model="amountOfSpecChar">
     </div>
     <div class="window-section">
-      <h2 class="window-section-title">Required phrase</h2>
-      <input type="text" class="window-section-input" placeholder="Requeired phrase" v-model="phrase">
-    </div>
-    <div class="window-section">
       <h2 class="window-section-title">Result</h2>
       <input type="text" class="window-section-input" placeholder="Result" :value="result" readonly>
     </div>
@@ -84,7 +80,6 @@ export default {
       length: '',
       amountOfNumbers: '',
       amountOfSpecChar: '',
-      phrase: '',
       result: 'test',
 
     };
