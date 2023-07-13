@@ -48,23 +48,41 @@ export default {
       return [Math.floor(Math.random() * 3), Math.floor(Math.random() * 9)];
     },
 
+    returnNumber() {
+      this.limitOfNumbers--;
+      return Math.floor(Math.random() * 10);
+    },
+    
+    returnChar(insideRowIndex, insideColumnIndex) {
+      this.limitOfCharacters--;
+      return specChar[insideRowIndex][insideColumnIndex];
+    },
+
+    returnLetter(insideRowIndex, insideColumnIndex) {
+      if (Math.floor(Math.random() * 2) === 1) {
+        return letters[insideRowIndex][insideColumnIndex].toUpperCase();
+      } else {
+        return letters[insideRowIndex][insideColumnIndex].toLowerCase();
+      }
+    },
+
     //it would be nice to separate it into more function for code clarity
     charPicker() {
       const [rowIndex, columnIndex] = this.randomArray();
       if (this.limitOfNumbers === 0) {
         if (this.limitOfCharacters === 0) {
-          return letters[rowIndex][columnIndex];
-          //random to uper or lower case - to do - it can be separated function
+         return this.returnLetter(rowIndex, columnIndex);
         } else {
-          this.limitOfCharacters--;
-          return specChar[rowIndex][columnIndex];
+         return this.returnChar(rowIndex, columnIndex);
         }
       } else if (this.limitOfCharacters === 0) {
-        this.limitOfNumbers--;
-        return Math.floor(Math.random() * 9);
+        return this.returnNumber();
       } else {
-        return letters[rowIndex][columnIndex];
-        //random to uper or lower case - to do - it can be separated function
+        if (Math.floor(Math.random() * 2) === 1) {
+         return this.returnNumber();
+        } else {
+         return this.returnChar(rowIndex, columnIndex);
+        }
       }
     },
 
@@ -75,7 +93,7 @@ export default {
       this.limitOfCharacters = parseInt(this.amountOfSpecChar);
       const allSymbols = parseInt(this.length);
 
-      if (allSymbols !== this.limitOfCharacters + this.limitOfNumbers) {
+      if (allSymbols < this.limitOfCharacters + this.limitOfNumbers) {
         this.result = 'too much symbols';
       } else {
         this.result = '';
