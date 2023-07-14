@@ -7,11 +7,11 @@
     </div>
     <div class="window-section">
       <h2 class="window-section-title">Ammount of numbers</h2>
-      <input type="number" class="window-section-input" placeholder="Ammount of numbers" v-model="amountOfNumbers">
+      <input type="number" class="window-section-input" placeholder="Amm. of numbers" v-model="amountOfNumbers">
     </div>
     <div class="window-section">
       <h2 class="window-section-title">Ammount of special characters</h2>
-      <input type="number" class="window-section-input" placeholder="Ammount of special characters" v-model="amountOfSpecChar">
+      <input type="number" class="window-section-input" placeholder="Amm. of special characters" v-model="amountOfSpecChar">
     </div>
     <div class="window-section">
       <h2 class="window-section-title" @mouseenter="generatePassword">Result</h2>
@@ -108,5 +108,24 @@ export default {
 </script>
 
 <style scoped lang="scss">
-/* Twój styl CSS */
+  //variables
+  $primaryColor: #242424;
+  $secondaryColor: #515151;
+  
+ .window {
+  //borders
+  border: 2px solid;
+  border-radius: 15px;
+  border-style: outset;
+
+  background-image: linear-gradient(45deg, #c4c4c4 5%, #4da4ff 41%, #ff3737 91%);
+  margin: 5% 30%;
+  padding-bottom: 15px;
+  max-width: 50%;
+  color: $secondaryColor;
+
+  &-title {
+    color: $primaryColor;
+  }
+ }
 </style>
