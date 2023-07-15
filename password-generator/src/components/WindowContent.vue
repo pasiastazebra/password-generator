@@ -114,11 +114,11 @@ export default {
   
  .window {
   //borders
-  border: 2px solid;
   border-radius: 15px;
-  border-style: outset;
 
-  background-image: linear-gradient(45deg, #c4c4c4 5%, #4da4ff 41%, #ff3737 91%);
+  background: rgb(52,52,52);
+  background: linear-gradient(125deg, rgba(52,52,52,0.6026785714285714) 0%, rgba(166,166,166,0.5970763305322129) 100%);
+  backdrop-filter: blur(10px);
   margin: 5% 30%;
   padding-bottom: 15px;
   max-width: 50%;
