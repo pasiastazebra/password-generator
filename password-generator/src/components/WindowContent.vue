@@ -126,6 +126,7 @@ export default {
 
   &-title {
     color: $primaryColor;
+    font-family: 'Regular';
   }
  }
 </style>
