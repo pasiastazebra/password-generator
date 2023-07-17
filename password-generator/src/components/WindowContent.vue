@@ -1,6 +1,8 @@
 <template>
   <div class="window">
-    <h1 class="window-title">PASSWORD GENERATOR</h1>
+    <div class="window-header">
+      <h1 class="window-header-title">Password Generator</h1>
+    </div>
     <div class="window-section">
       <h2 class="window-section-title">Length</h2>
       <input type="number" class="window-section-input" placeholder="Length" v-model="length">
@@ -109,24 +111,37 @@ export default {
 
 <style scoped lang="scss">
   //variables
-  $primaryColor: #242424;
+  $primaryColor: #e9e9e9;
   $secondaryColor: #515151;
+  $greenColor: #159957;
   
  .window {
   //borders
-  border-radius: 15px;
+  border-radius: 5px;
+  box-shadow: 14px 14px 16px -11px $greenColor;
 
-  background: rgb(52,52,52);
-  background: linear-gradient(125deg, rgba(52,52,52,0.6026785714285714) 0%, rgba(166,166,166,0.5970763305322129) 100%);
-  backdrop-filter: blur(10px);
+  background: $primaryColor;
   margin: 5% 30%;
   padding-bottom: 15px;
   max-width: 50%;
-  color: $secondaryColor;
 
-  &-title {
-    color: $primaryColor;
-    font-family: 'Regular';
+  &-header{
+    background: $greenColor;
+    border-radius: 5px 5px 0px 0px;
+
+    &-title {
+      color: $primaryColor;
+      font-weight: 600;
+    }
+  }
+
+  &-section {
+
+   &-title {
+     color: $secondaryColor;
+     font-weight: 400;
+   }
+
   }
  }
 </style>
