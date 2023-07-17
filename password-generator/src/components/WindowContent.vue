@@ -5,19 +5,19 @@
     </div>
     <div class="window-section">
       <h2 class="window-section-title">Length</h2>
-      <input type="number" class="window-section-input" placeholder="Length" v-model="length">
+      <input type="number" class="window-section-input" placeholder="The longer the better" v-model="length">
     </div>
     <div class="window-section">
       <h2 class="window-section-title">Ammount of numbers</h2>
-      <input type="number" class="window-section-input" placeholder="Amm. of numbers" v-model="amountOfNumbers">
+      <input type="number" class="window-section-input" placeholder="How many numbers do you wish" v-model="amountOfNumbers">
     </div>
     <div class="window-section">
       <h2 class="window-section-title">Ammount of special characters</h2>
-      <input type="number" class="window-section-input" placeholder="Amm. of special characters" v-model="amountOfSpecChar">
+      <input type="number" class="window-section-input" placeholder="Same for these funky symbols" v-model="amountOfSpecChar">
     </div>
     <div class="window-section">
       <h2 class="window-section-title" @mouseenter="generatePassword">Result</h2>
-      <input type="text" class="window-section-input" placeholder="Result" :value="result" readonly>
+      <input type="text" class="window-section-input" placeholder="Hover the title first 🫣" :value="result" readonly>
     </div>
   </div>
 </template>
@@ -145,11 +145,10 @@ export default {
    }
 
    &-input {
-    margin: 40px 25px;
-    width: 200px;
+    width: 220px;
     display: block;
     border: none;
-    padding: 10px 0;
+    padding: 1px 0;
     border-bottom: solid 1px $greenColor;
     transition: all 0.3s cubic-bezier(.64,.09,.08,1);
     background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $greenColor 4%);
