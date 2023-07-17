@@ -144,6 +144,24 @@ export default {
      font-weight: 400;
    }
 
+   &-input {
+    margin: 40px 25px;
+    width: 200px;
+    display: block;
+    border: none;
+    padding: 10px 0;
+    border-bottom: solid 1px $greenColor;
+    transition: all 0.3s cubic-bezier(.64,.09,.08,1);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 96%, $greenColor 4%);
+    background-position: -200px 0;
+    background-size: 200px 100%;
+    background-repeat: no-repeat;
+    color: darken($greenColor, 20%);
+    
+    &:focus{
+      outline: none;
+    }
+  }
   }
  }
 </style>
