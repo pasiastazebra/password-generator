@@ -17,7 +17,7 @@
     </div>
     <div class="window-section">
       <h2 class="window-section-title" @mouseenter="generatePassword">Result</h2>
-      <input type="text" class="window-section-input" placeholder="Hover the title first 🫣" :value="result" readonly>
+      <input type="text" class="window-section-input" placeholder="Hover the title first 🫣" :value="result" readonly :style="cursorStyle">
     </div>
   </div>
 </template>
@@ -41,6 +41,9 @@ export default {
       result: '',
       limitOfNumbers: 0,
       limitOfCharacters: 0,
+      cursorStyle: {
+        cursor: 'not-allowed', 
+      },
     };
   },
   methods: {
@@ -104,6 +107,7 @@ export default {
     },
     generatePassword() {
       this.passwordGenerator();
+      this.cursorStyle.cursor = 'cell';
     },
   },
 };
