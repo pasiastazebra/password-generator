@@ -1,14 +1,17 @@
 <template>
   <WindowContent></WindowContent>
+  <SiteFooter></SiteFooter>
 </template>
 
 <script>
 import WindowContent from './components/WindowContent.vue';
+import SiteFooter from './components/SiteFooter.vue';
 
 export default {
   name: 'App',
   components: {
-    WindowContent
+    WindowContent,
+    SiteFooter
   }
 }
 </script>
