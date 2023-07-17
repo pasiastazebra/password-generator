@@ -132,10 +132,12 @@ export default {
     &-title {
       color: $primaryColor;
       font-weight: 600;
+      text-align: center;
     }
   }
 
   &-section {
+    margin: 15px;
 
    &-title {
      color: $secondaryColor;
