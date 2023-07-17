@@ -23,6 +23,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
   margin-top: 60px;
+  margin-bottom: 0%;
 }
 .bottomWaves {
   position:absolute;
