@@ -8,11 +8,11 @@
       <input type="number" class="window-section-input" placeholder="The longer the better" v-model="length">
     </div>
     <div class="window-section">
-      <h2 class="window-section-title">Ammount of numbers</h2>
+      <h2 class="window-section-title">Amount of numbers</h2>
       <input type="number" class="window-section-input" placeholder="How many numbers do you wish" v-model="amountOfNumbers">
     </div>
     <div class="window-section">
-      <h2 class="window-section-title">Ammount of special characters</h2>
+      <h2 class="window-section-title">Amount of special characters</h2>
       <input type="number" class="window-section-input" placeholder="Same for these funky symbols" v-model="amountOfSpecChar">
     </div>
     <div class="window-section">
@@ -47,9 +47,13 @@ export default {
     };
   },
   methods: {
+    //returns 2D array
+
     randomArray() {
       return [Math.floor(Math.random() * 3), Math.floor(Math.random() * 9)];
     },
+
+    //returns symbol
 
     returnNumber() {
       this.limitOfNumbers--;
@@ -69,7 +73,8 @@ export default {
       }
     },
 
-    //it would be nice to separate it into more function for code clarity
+    //picking matching symbol
+
     charPicker() {
       const [rowIndex, columnIndex] = this.randomArray();
       if (this.limitOfNumbers === 0) {
@@ -89,25 +94,45 @@ export default {
       }
     },
 
-    //final password generating function have to be there
+    //final password generating function
+
     passwordGenerator() {
+
       //limiters
-      this.limitOfNumbers = parseInt(this.amountOfNumbers);
-      this.limitOfCharacters = parseInt(this.amountOfSpecChar);
+
+      if (this.amountOfNumbers === '') {
+        this.limitOfNumbers = 0;
+      } else {
+        this.limitOfNumbers = parseInt(this.amountOfNumbers);
+      }
+
+      if (this.amountOfSpecChar === ''){
+        this.limitOfCharacters = 0;
+      } else {
+        this.limitOfCharacters = parseInt(this.amountOfSpecChar);
+      }
+
       const allSymbols = parseInt(this.length);
 
       if (allSymbols < this.limitOfCharacters + this.limitOfNumbers) {
         this.result = 'too much symbols';
+        this.cursorStyle.cursor = 'not-allowed';
       } else {
         this.result = '';
         for (let i = 0; i < allSymbols; i++) {
           this.result += this.charPicker();
         }
       }
+
+      //cursor fix
+      if (this.result.length == 0) {
+            this.cursorStyle.cursor = 'not-allowed';
+          } else {
+            this.cursorStyle.cursor = 'cell';
+          }
     },
     generatePassword() {
       this.passwordGenerator();
-      this.cursorStyle.cursor = 'cell';
     },
   },
 };
