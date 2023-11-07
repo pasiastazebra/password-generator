@@ -1,5 +1,7 @@
 # password-generator
 
+Simple tool for generating a password based on the parameters specified by a user. My first Vue.JS project.
+
 ## Project setup
 ```
 npm install
